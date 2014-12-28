@@ -1,0 +1,25 @@
+{
+"name": "mediaManager",
+"version": "1.0.0",
+"description": "'App for oganizing, sharing and playing media files'",
+"main": "index.js",
+"directories": {
+"test": "test"
+},
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1"
+},
+"repository": {
+"type": "git",
+"url": "https://github.com/dcorns/mediaManager"
+},
+"author": "Dale Corns",
+"license": "GN2",
+"bugs": {
+"url": "https://github.com/dcorns/mediaManager/issues"
+},
+"homepage": "https://github.com/dcorns/mediaManager",
+"dependencies": {
+"express": "4.9.0"
+}
+}
