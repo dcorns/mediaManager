@@ -11,8 +11,11 @@ module.exports = function(page, useport, rt){
   app.use(bodyparser.json());
 
   app.get('/',function(req, res){
+    //res.status(200);
+    //res.sendFile(page, {root: rt});
+    app.use(express.static(rt + (process.env.STATIC_DIR || '/build')));
     res.status(200);
-    res.sendFile(page, {root: rt});
+    res.sendFile(rt + '/build/index.html');
   });
 
   var server = http.createServer(app);

@@ -3,5 +3,5 @@
  */
 'use strict';
 
-var app = require('./api/js/server');
-app('./app/index.html', 3000, __dirname);
+var server = require('./api/js/server');
+server('./app/index.html', 3000, __dirname);
