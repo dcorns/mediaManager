@@ -6,13 +6,27 @@
 </head>
 <body>
 <h1>MEDIA MANAGER</h1>
-<nav><ul><li><a>AUDIO</a></li><li><a>VIDEO</a></li><li><a>PICTURES</a></li></ul></nav>
-<nav><ul><li><a>ADD</a></li><li><a>VIEW</a></li><li><a>EDIT</a></li></ul></nav>
+<nav><button id="btnaudio" onclick="routes.getNewAudio()">AUDIO</button><button id="btnvideo" onclick="routes.getNewVideo()">VIDEO</button><button id="btnpictures" onclick="routes.getNewPictures()">PICTURES</button></nav>
+<nav><button id="add">ADD</button><button id="view">VIEW</button><button id="edit">EDIT</button></nav>
 <section id="main">
-    <form><input id="mediatype"><input id="catagory"></form>
-    <section id="audio"><audio></audio></section>
-    <section id="video"><video></video></section>
-    <section id="pictures"></section>
+    <form>
+        <label for="mediatype">MediaType</label>
+        <input id="mediatype">
+        <label for="catagory">Category</label>
+        <input id="catagory">
+        <label for="filename">FileName</label>
+        <input id="filename">
+    </form>
+    <section id="audio">
+        <audio></audio>
+    </section>
+    <section id="video">
+        <video></video>
+    </section>
+    <section id="pictures">
+    </section>
+    <section id="newstuff">
+    </section>
 </section>
 <footer class="footer">
     <p class="footer_p">&copy; 2014 Dale Corns</p>

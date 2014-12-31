@@ -7,16 +7,9 @@ module.exports = function(page, useport, rt){
   var bodyparser = require('body-parser');
   var http = require('http');
   var app = express();
-
   app.use(bodyparser.json());
-
-  app.get('/',function(req, res){
-    //res.status(200);
-    //res.sendFile(page, {root: rt});
-    app.use(express.static(rt + (process.env.STATIC_DIR || '/build')));
-    res.status(200);
-    res.sendFile(rt + '/build/index.html');
-  });
+  var serv = {app: app, dir:rt};
+  var routes = require('./routes')(serv);
 
   var server = http.createServer(app);
   server.listen(process.env.PORT || useport, function () {
