@@ -23,8 +23,18 @@ return {
           filelist = filelist + '<li>' + fileNames[f] + '</li>';
         }
         filelist = filelist + '</ul>';
-        console.log('rts17'); console.dir(filelist);
         document.getElementById("pictures").innerHTML=filelist;
+        var loadNewPic = new XMLHttpRequest();
+        f = 0;
+        for(f; f<len; f++){
+          loadNewPic.open('GET', 'loadPic/'+fileNames[f]);
+          loadNewPic.send();
+          loadNewPic.onreadystatechange = function(){
+            if(loadNewPic.readyState == 4 && loadNewPic.status==200){
+              document.getElementById('pictures').innerHTML = document.getElementById('pictures').innerHTML + '<img src=' + fileNames[f] + '></img>';
+            }
+          }
+        }
       }
     }
   },

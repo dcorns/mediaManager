@@ -15,17 +15,27 @@ module.exports = function(server){
 
   server.app.get('/newPictures', function(req, res){
     fs.readdir('Pictures/new', function(err, data){
-      if(err){
-        res.status(500);
-        res.send();
-      }
+      //if(err){
+      //  res.status(500);
+      //  res.send();
+      //}
       var result = {fileNames: data};
-      res.status(200);
-      res.json(result);
-      res.send();
+      res.status(200).json(result);
     });
 
   });
+
+ server.app.get('/loadPic/:pic', function(req, res){
+    //fs.readdir('Pictures/new/:pic', function(err, data){
+      //if(err){
+      //  res.status(500);
+      //}
+   console.log('rts33');
+   console.log(req.params.pic);
+     res.status(200).sendFile('/new/'+req.params.pic, {root: 'Pictures'});
+  // });
+
+ });
 
   server.app.get('/newAudio', function(req, res){
     res.status(200);
